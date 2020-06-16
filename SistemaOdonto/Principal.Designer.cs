@@ -88,6 +88,7 @@
             this.menuConsulta.Name = "menuConsulta";
             this.menuConsulta.Size = new System.Drawing.Size(180, 22);
             this.menuConsulta.Text = "Consulta";
+            this.menuConsulta.Click += new System.EventHandler(this.menuConsulta_Click);
             // 
             // agendasToolStripMenuItem
             // 
@@ -103,20 +104,20 @@
             // menuAgDentistas
             // 
             this.menuAgDentistas.Name = "menuAgDentistas";
-            this.menuAgDentistas.Size = new System.Drawing.Size(180, 22);
+            this.menuAgDentistas.Size = new System.Drawing.Size(126, 22);
             this.menuAgDentistas.Text = "Dentistas";
             this.menuAgDentistas.Click += new System.EventHandler(this.menuAgDentistas_Click);
             // 
             // menuAgConsultas
             // 
             this.menuAgConsultas.Name = "menuAgConsultas";
-            this.menuAgConsultas.Size = new System.Drawing.Size(180, 22);
+            this.menuAgConsultas.Size = new System.Drawing.Size(126, 22);
             this.menuAgConsultas.Text = "Consultas";
             // 
             // menuAgPacientes
             // 
             this.menuAgPacientes.Name = "menuAgPacientes";
-            this.menuAgPacientes.Size = new System.Drawing.Size(180, 22);
+            this.menuAgPacientes.Size = new System.Drawing.Size(126, 22);
             this.menuAgPacientes.Text = "Pacientes";
             this.menuAgPacientes.Click += new System.EventHandler(this.menuAgPacientes_Click);
             // 

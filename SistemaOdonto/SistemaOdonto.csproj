@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadConsulta.Designer.cs">
+      <DependentUpon>CadConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadDentista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CadConsulta.resx">
+      <DependentUpon>CadConsulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadDentista.resx">
       <DependentUpon>CadDentista.cs</DependentUpon>
     </EmbeddedResource>
