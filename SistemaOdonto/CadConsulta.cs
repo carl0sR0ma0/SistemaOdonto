@@ -122,5 +122,11 @@ namespace SistemaOdonto
 
             return obj;
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            Consultas frm = new Consultas();
+            frm.ShowDialog();
+        }
     }
 }

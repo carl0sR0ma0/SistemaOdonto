@@ -86,6 +86,12 @@
     <Compile Include="ConPaciente.Designer.cs">
       <DependentUpon>ConPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas.Designer.cs">
+      <DependentUpon>Consultas.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarDentista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConPaciente.resx">
       <DependentUpon>ConPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas.resx">
+      <DependentUpon>Consultas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarDentista.resx">
       <DependentUpon>EditarDentista.cs</DependentUpon>
@@ -164,8 +173,10 @@
     <Content Include="Resource\dentista.ico" />
     <Content Include="Resource\dentista.jpg" />
     <Content Include="Resource\editar.ico" />
+    <None Include="Resource\next.png" />
+    <None Include="Resource\previous.png" />
     <Content Include="Resource\procurar.png" />
-    <Content Include="Resource\remove3.png" />
+    <None Include="Resource\remove.png" />
     <Content Include="Resource\sair.ico" />
     <Content Include="Resource\salvar.ico" />
   </ItemGroup>

@@ -122,6 +122,7 @@
             this.dtHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtHora.Location = new System.Drawing.Point(340, 67);
             this.dtHora.Name = "dtHora";
+            this.dtHora.ShowUpDown = true;
             this.dtHora.Size = new System.Drawing.Size(160, 20);
             this.dtHora.TabIndex = 69;
             // 
@@ -180,8 +181,9 @@
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(95, 25);
             this.btnConsultar.TabIndex = 72;
-            this.btnConsultar.Text = "&Consultar";
+            this.btnConsultar.Text = "&Agenda";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // btnSalvar
             // 
