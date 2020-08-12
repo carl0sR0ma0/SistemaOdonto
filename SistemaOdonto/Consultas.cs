@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -69,7 +70,45 @@ namespace SistemaOdonto
             DataGridViewLinkColumn colConsulta = new DataGridViewLinkColumn();
             colConsulta.HeaderText = "";
             colConsulta.Name = "ColunaVerConsulta";
-            dgv.Columns.AddRange(colConsulta);
+            dgv.Columns.Add(colConsulta);
+
+            dgv.CellContentClick += new DataGridViewCellEventHandler(this.Tabela_Clicada);
+        }
+
+        private void Tabela_Clicada(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        public void GerarLinha(DataGridView dgv, int dentistaId)
+        {
+            var dentista = serviceD.Buscar(dentistaId);
+            List<Consulta> consultas = service.Buscar(dentista, Convert.ToDateTime(dtpDataMostrada.Value.ToString("dd/MM/yyyy"))).OrderBy(x => x.HoraMarcada).ToList();
+
+            foreach (var consulta in consultas)
+            {
+                int linhaAtual = dgv.Rows.Add();
+                dgv.Rows[linhaAtual].Cells[0].Value = consulta.IdConsulta;
+                dgv.Rows[linhaAtual].Cells[1].Value = consulta.HoraMarcada.Value.ToString("HH:mm");
+                dgv.Rows[linhaAtual].Cells[2].Value = serviceP.Buscar(Convert.ToInt32(consulta.IdPaciente)).Nome;
+                dgv.Rows[linhaAtual].Cells[3].Value = consulta.Status;
+                dgv.Rows[linhaAtual].Cells[4].Value = "Ver Consulta";
+            }            
+        }
+
+        private void tabControlAgenda_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            AtualizarLinhas();
+        }
+
+        private void AtualizarLinhas()
+        {
+            if (tabControlAgenda.SelectedTab.Name != "HomeAgenda")
+            {
+                var indiceTab = Convert.ToInt32(tabControlAgenda.SelectedTab.Name);
+                DataGridViews[indiceTab].Rows.Clear();
+                GerarLinha(DataGridViews[indiceTab], indiceTab);
+            }
         }
     }
 }

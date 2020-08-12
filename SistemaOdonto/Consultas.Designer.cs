@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consultas));
             this.tabControlAgenda = new System.Windows.Forms.TabControl();
             this.HomeAgenda = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtDataNasc = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataMostrada = new System.Windows.Forms.DateTimePicker();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnAvancar = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControlAgenda.SuspendLayout();
             this.HomeAgenda.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +51,7 @@
             this.tabControlAgenda.SelectedIndex = 0;
             this.tabControlAgenda.Size = new System.Drawing.Size(577, 497);
             this.tabControlAgenda.TabIndex = 0;
+            this.tabControlAgenda.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControlAgenda_Selecting);
             // 
             // HomeAgenda
             // 
@@ -64,6 +65,16 @@
             this.HomeAgenda.TabIndex = 0;
             this.HomeAgenda.Text = "Inicio";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label2.Location = new System.Drawing.Point(21, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(518, 52);
+            this.label2.TabIndex = 1;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -74,12 +85,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Esta é a Agenda das Consultas";
             // 
-            // dtDataNasc
+            // dtpDataMostrada
             // 
-            this.dtDataNasc.Location = new System.Drawing.Point(216, 12);
-            this.dtDataNasc.Name = "dtDataNasc";
-            this.dtDataNasc.Size = new System.Drawing.Size(227, 20);
-            this.dtDataNasc.TabIndex = 40;
+            this.dtpDataMostrada.Location = new System.Drawing.Point(216, 12);
+            this.dtpDataMostrada.Name = "dtpDataMostrada";
+            this.dtpDataMostrada.Size = new System.Drawing.Size(227, 20);
+            this.dtpDataMostrada.TabIndex = 40;
             // 
             // btnBuscar
             // 
@@ -112,16 +123,6 @@
             this.btnVoltar.TabIndex = 43;
             this.btnVoltar.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(21, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(518, 52);
-            this.label2.TabIndex = 1;
-            this.label2.Text = resources.GetString("label2.Text");
-            // 
             // Consultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,7 +132,7 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnAvancar);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dtDataNasc);
+            this.Controls.Add(this.dtpDataMostrada);
             this.Controls.Add(this.tabControlAgenda);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -147,7 +148,7 @@
 
         #endregion
         private System.Windows.Forms.TabPage HomeAgenda;
-        private System.Windows.Forms.DateTimePicker dtDataNasc;
+        private System.Windows.Forms.DateTimePicker dtpDataMostrada;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAvancar;
