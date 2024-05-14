@@ -11,7 +11,7 @@ namespace Controllers.Context
 {
     class SistemaContext : DbContext
     {
-        public SistemaContext() : base("Server=DESKTOP-3VKD8S1\\SQLEXPRESS; Database=odonto;Integrated Security=True;")
+        public SistemaContext() : base("Server=DESKTOP-8AVKMJC\\SQLEXPRESS; Database=odonto;Integrated Security=True;")
         {
 
         }

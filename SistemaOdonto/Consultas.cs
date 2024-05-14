@@ -77,7 +77,31 @@ namespace SistemaOdonto
 
         private void Tabela_Clicada(object sender, DataGridViewCellEventArgs e)
         {
-            
+            DataGridView dgv = sender as DataGridView;
+            var idConsulta = dgv.Rows[e.RowIndex].Cells[0].Value;
+            Consulta c = service.Buscar(Convert.ToInt32(idConsulta));
+
+            try
+            {
+                if (e.ColumnIndex == 2 && e.RowIndex != -1)
+                {
+                    Paciente p = serviceP.Buscar(c.IdPaciente);
+                    EditarPaciente frm = new EditarPaciente(p);
+                    frm.ShowDialog();
+                    AtualizarLinhas();
+                }
+                if (e.ColumnIndex == 4 && e.RowIndex != -1)
+                {
+                    //var Form = new EditarConsulta(c);
+                    //Form.ShowDialog();
+                    AtualizarLinhas();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public void GerarLinha(DataGridView dgv, int dentistaId)
